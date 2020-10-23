@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\SalaController;
 
 Route::group([
 
@@ -19,3 +19,5 @@ Route::group([
     Route::post('signup', [AuthController::class, 'signup']);
 
 });
+
+Route::resource('salas', SalaController::class);

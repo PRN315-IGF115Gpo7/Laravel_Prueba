@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MunicipioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/municipios', [MunicipioController::class, 'index']);
+Route::get('/municipios/{id}', [MunicipioController::class, 'show']);
+Route::put('/municipios/{id}/update', [MunicipioController::class, 'update']);

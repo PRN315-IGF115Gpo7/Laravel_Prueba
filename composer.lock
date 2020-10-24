@@ -1516,18 +1516,6 @@
         },
         {
             "name": "nesbot/carbon",
-<<<<<<< Updated upstream
-            "version": "2.41.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "6571aec754a648ef476a8d8f57993f7bc965afe4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/6571aec754a648ef476a8d8f57993f7bc965afe4",
-                "reference": "6571aec754a648ef476a8d8f57993f7bc965afe4",
-=======
             "version": "2.41.5",
             "source": {
                 "type": "git",
@@ -1538,7 +1526,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/c4a9caf97cfc53adfc219043bcecf42bc663acee",
                 "reference": "c4a9caf97cfc53adfc219043bcecf42bc663acee",
->>>>>>> Stashed changes
                 "shasum": ""
             },
             "require": {
@@ -1614,11 +1601,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< Updated upstream
-            "time": "2020-10-22T07:28:05+00:00"
-=======
             "time": "2020-10-23T06:02:30+00:00"
->>>>>>> Stashed changes
         },
         {
             "name": "nikic/php-parser",

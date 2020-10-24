@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SalaController;
+use App\Http\Controllers\EmpleadoController;
 
 Route::group([
 
@@ -21,3 +22,4 @@ Route::group([
 });
 
 Route::resource('salas', SalaController::class);
+Route::resource('empleados', EmpleadoController::class);

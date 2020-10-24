@@ -7,6 +7,12 @@ use App\Models\Grupo;
 
 class GrupoController extends Controller
 {
+    public function __construct()
+    {
+        /*$this->middleware('auth');
+        $this->middleware('log')->only('index');
+        $this->middleware('log')->only('index');*/
+    }
     /**
      * Display a listing of the resource.
      *
@@ -36,9 +42,9 @@ class GrupoController extends Controller
     public function store(Request $request)
     {
         $grupo = new Grupo();
-        $grupo->TamanioDelGrupo = $request["tamanioGrupo"];
-        $grupo->NombreDelGrupo = $request["nombreGrupo"];
-        $grupo->DetalleDelGrupo = $request["detalleGrupo"];
+        $grupo->tamanio_del_grupo = $request["tamanioGrupo"];
+        $grupo->nombre_del_grupo = $request["nombreGrupo"];
+        $grupo->detalle_del_grupo = $request["detalleGrupo"];
         $grupo->save();
     }
 
@@ -74,9 +80,9 @@ class GrupoController extends Controller
     public function update(Request $request, $id)
     {
         $grupo = Grupo::find($id);
-        $grupo->TamanioDelGrupo = $request["tamanioGrupo"];
-        $grupo->NombreDelGrupo = $request["nombreGrupo"];
-        $grupo->DetalleDelGrupo = $request["detalleGrupo"];
+        $grupo->tamanio_del_grupo = $request["tamanioGrupo"];
+        $grupo->nombre_del_grupo = $request["nombreGrupo"];
+        $grupo->detalle_del_grupo = $request["detalleGrupo"];
         $grupo->save();
     }
 

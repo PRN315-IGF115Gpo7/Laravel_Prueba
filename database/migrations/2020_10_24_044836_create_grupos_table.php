@@ -14,10 +14,10 @@ class CreateGruposTable extends Migration
     public function up()
     {
         Schema::create('grupos', function (Blueprint $table) {
-            $table->id('IdDelGrupo');
-            $table->integer('TamanioDelGrupo');
-            $table->string('NombreDelGrupo');
-            $table->string('DetalleDelGrupo');  
+            $table->id('id_del_grupo');
+            $table->integer('tamanio_del_drupo');
+            $table->string('nombre_del_grupo');
+            $table->string('detalle_del_Grupo');  
             $table->timestamps();   
         });
     }

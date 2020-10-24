@@ -53,9 +53,9 @@ class PuestoController extends Controller
      * @param  \App\Models\Puesto  $puesto
      * @return \Illuminate\Http\Response
      */
-    public function show(Puesto $puesto)
+    public function show($id)
     {
-        return Puesto::find($puesto);
+        return Puesto::find($id);
     }
 
     /**
@@ -76,9 +76,9 @@ class PuestoController extends Controller
      * @param  \App\Models\Puesto  $puesto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $puesto)
+    public function update(Request $request, $id)
     {
-        $puesto = Puesto::find($puesto);
+        $puesto = Puesto::find($id);
         $puesto->titulo = $request['titulo'];
         $puesto->descripcion = $request['descripcion'];
         $puesto->salario = $request['salario'];
@@ -91,9 +91,9 @@ class PuestoController extends Controller
      * @param  \App\Models\Puesto  $puesto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Puesto $puesto)
+    public function destroy($id)
     {
-        $puesto = Puesto::find($puesto);
+        $puesto = Puesto::find($id);
         $puesto->delete();
     }
 }

@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SalaController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\PuestoController;
+
 
 Route::group([
 
@@ -22,4 +24,7 @@ Route::group([
 });
 
 Route::resource('salas', SalaController::class);
+
 Route::resource('empleados', EmpleadoController::class);
+
+Route::resource('puestos', PuestoController::class);

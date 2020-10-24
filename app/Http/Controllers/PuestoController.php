@@ -79,10 +79,10 @@ class PuestoController extends Controller
     public function update(Request $request, $puesto)
     {
         $puesto = Puesto::find($puesto);
-        $sala->titulo = $request['titulo'];
-        $sala->descripcion = $request['descripcion'];
-        $sala->salario = $request['salario'];
-        $sala->save();
+        $puesto->titulo = $request['titulo'];
+        $puesto->descripcion = $request['descripcion'];
+        $puesto->salario = $request['salario'];
+        $puesto->save();
     }
 
     /**

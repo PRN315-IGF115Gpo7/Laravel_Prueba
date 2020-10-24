@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Sala;
+use App\Http\Requests\SalaRequest;
 
 class SalaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('log')->only('index');
+        $this->middleware('subscribed')->except('store');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -33,16 +40,19 @@ class SalaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SalaRequest $request)
     {
-        $sala = new Sala();
-        $sala->titulo = $request['titulo'];
-        $sala->descripcion = $request['descripcion'];
-        $sala->fecha_inicio = $request['fecha_inicio'];
-        $sala->hora_inicio = $request['hora_inicio'];
-        $sala->fecha_fin = $request['fecha_fin'];
-        $sala->hora_fin = $request['hora_fin'];
-        $sala->save();
+        $validate = $request->validate();
+        if($validate){
+            $sala = new Sala();
+            $sala->titulo = $request['titulo'];
+            $sala->descripcion = $request['descripcion'];
+            $sala->fecha_inicio = $request['fecha_inicio'];
+            $sala->hora_inicio = $request['hora_inicio'];
+            $sala->fecha_fin = $request['fecha_fin'];
+            $sala->hora_fin = $request['hora_fin'];
+            $sala->save();
+        }
     }
 
     /**
@@ -74,16 +84,19 @@ class SalaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SalaRequest $request, $id)
     {
-        $sala = Sala::find($id);
-        $sala->titulo = $request['titulo'];
-        $sala->descripcion = $request['descripcion'];
-        $sala->fecha_inicio = $request['fecha_inicio'];
-        $sala->hora_inicio = $request['hora_inicio'];
-        $sala->fecha_fin = $request['fecha_fin'];
-        $sala->hora_fin = $request['hora_fin'];
-        $sala->save();
+        $validate = $request->validate();
+        if($validate){
+            $sala = Sala::find($id);
+            $sala->titulo = $request['titulo'];
+            $sala->descripcion = $request['descripcion'];
+            $sala->fecha_inicio = $request['fecha_inicio'];
+            $sala->hora_inicio = $request['hora_inicio'];
+            $sala->fecha_fin = $request['fecha_fin'];
+            $sala->hora_fin = $request['hora_fin'];
+            $sala->save();
+        }
     }
 
     /**

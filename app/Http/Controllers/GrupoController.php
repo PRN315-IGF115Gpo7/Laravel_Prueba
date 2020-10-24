@@ -35,7 +35,11 @@ class GrupoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $grupo = new Grupo();
+        $grupo->TamanioDelGrupo = $request["tamanioGrupo"];
+        $grupo->NombreDelGrupo = $request["nombreGrupo"];
+        $grupo->DetalleDelGrupo = $request["detalleGrupo"];
+        $grupo->save();
     }
 
     /**
@@ -46,7 +50,7 @@ class GrupoController extends Controller
      */
     public function show($id)
     {
-        //
+        return Grupo::find($id);   
     }
 
     /**
@@ -69,7 +73,11 @@ class GrupoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $grupo = Grupo::find($id);
+        $grupo->TamanioDelGrupo = $request["tamanioGrupo"];
+        $grupo->NombreDelGrupo = $request["nombreGrupo"];
+        $grupo->DetalleDelGrupo = $request["detalleGrupo"];
+        $grupo->save();
     }
 
     /**
@@ -80,6 +88,7 @@ class GrupoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $grupo = Grupo::find($id);
+        $grupo->delete();
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Grupo;
 
 class GrupoController extends Controller
 {
@@ -13,7 +14,7 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        //
+        return Grupo::all();
     }
 
     /**

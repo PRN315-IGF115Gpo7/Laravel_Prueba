@@ -31,3 +31,4 @@ Route::resource('empleados', EmpleadoController::class);
 Route::resource('puestos', PuestoController::class);
 
 Route::resource('grupos', GrupoController::class);
+

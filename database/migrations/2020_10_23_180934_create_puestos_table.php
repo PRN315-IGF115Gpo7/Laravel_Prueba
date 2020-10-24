@@ -15,10 +15,10 @@ class CreatePuestosTable extends Migration
     {
         Schema::create('puestos', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->string('titulo');
+            $table->string('titulo', 50);
             $table->string('descripcion');
             $table->double ('salario', 5, 2);
+            $table->timestamps();
         });
     }
 

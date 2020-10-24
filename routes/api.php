@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SalaController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\PuestoController;
+use App\Http\Controllers\GrupoController;
 
 
 Route::group([
@@ -28,3 +29,5 @@ Route::resource('salas', SalaController::class);
 Route::resource('empleados', EmpleadoController::class);
 
 Route::resource('puestos', PuestoController::class);
+
+Route::resource('grupos', GrupoController::class);

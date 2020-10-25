@@ -42,7 +42,7 @@ class GrupoController extends Controller
     public function store(Request $request)
     {
         $grupo = new Grupo();
-        $grupo->tamanio_del_grupo = $request["tamanioGrupo"];
+        $grupo->tamanio_del_drupo = $request["tamanioGrupo"];
         $grupo->nombre_del_grupo = $request["nombreGrupo"];
         $grupo->detalle_del_grupo = $request["detalleGrupo"];
         $grupo->save();

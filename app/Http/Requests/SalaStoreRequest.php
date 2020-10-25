@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SalaRequest extends FormRequest
+class SalaStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class SalaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,10 +26,10 @@ class SalaRequest extends FormRequest
         return [
             'titulo' => 'required',
             'descripcion' => 'required',
-            'fecha_incio' => 'required',
+            'fecha_inicio' => 'required',
             'hora_inicio' => 'required',
-            'fecha_final' => 'required',
-            'hora_final' => 'required',
+            'fecha_fin' => 'required',
+            'hora_fin' => 'required',
         ];
     }
 }

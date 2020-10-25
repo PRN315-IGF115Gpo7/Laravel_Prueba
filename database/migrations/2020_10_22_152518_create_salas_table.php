@@ -17,10 +17,10 @@ class CreateSalasTable extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('descripcion');
-            $table->string('fecha_inicio', 10);
-            $table->string('hora_inicio', 8);
-            $table->string('fecha_fin', 10);
-            $table->string('hora fin', 8);
+            $table->string('fecha_inicio');
+            $table->string('hora_inicio');
+            $table->string('fecha_fin');
+            $table->string('hora_fin');
             $table->timestamps();
         });
     }

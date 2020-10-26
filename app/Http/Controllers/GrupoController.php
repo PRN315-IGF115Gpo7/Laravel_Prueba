@@ -9,9 +9,7 @@ class GrupoController extends Controller
 {
     public function __construct()
     {
-        /*$this->middleware('auth');
-        $this->middleware('log')->only('index');
-        $this->middleware('log')->only('index');*/
+        $this->middleware('auth:api', ['except' => ['index', 'show']]);
     }
     /**
      * Display a listing of the resource.

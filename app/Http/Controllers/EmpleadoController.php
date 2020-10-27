@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Empleado;
+use App\Http\Requests\EmpleadoRequest;
 
 class EmpleadoController extends Controller
 {
@@ -14,9 +15,10 @@ class EmpleadoController extends Controller
      */
     public function __construct()
     {
-        /*$this->middleware('auth');
+        /*$this->middleware('auth'); 
         $this->middleware('log')->only('index');
         $this->middleware('subscribed')->except('store');*/
+        $this->middleware('auth:api');
     }
     
     /**
@@ -45,7 +47,7 @@ class EmpleadoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EmpleadoRequest $request)
     {
         $empleado = new Empleado();
         $empleado->nombre = $request['nombre'];

@@ -12,7 +12,7 @@ use App\Http\Controllers\GrupoController;
 Route::group([
 
     'middleware' => 'api',
-    'prefix' => 'auth'
+    'prefix' => ''
 
 ], function ($router) {
 

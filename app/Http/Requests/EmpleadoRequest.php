@@ -24,16 +24,17 @@ class EmpleadoRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required',
+            'nombre' => 'required|min:5',
             'apellido' => 'required',
         ];
     }
 
     public function messages()
-{
-    return [
-        'nombre.required' => 'El nombre no puede ser nulo',
-        'apellido.required' => 'El apellido no puede ser nulo',
-    ];
-}
+    {
+        return [
+            'nombre.required' => 'El nombre no puede ser nulo',
+            'nombre.min' => 'El nombre no puede contener menos de 5 caracteres',
+            'apellido.required' => 'El apellido no puede ser nulo',
+        ];
+    }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\SalaController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\PuestoController;
 use App\Http\Controllers\GrupoController;
+use App\Http\Controllers\UnidadOrganizativaController;
 
 
 Route::group([
@@ -31,3 +32,5 @@ Route::resource('empleados', EmpleadoController::class);
 Route::resource('puestos', PuestoController::class);
 
 Route::resource('grupos', GrupoController::class);
+
+Route::resource('unidades', UnidadOrganizativaController::class);
